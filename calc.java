@@ -1,5 +1,4 @@
-import java.util.*;
-
+import java.util.Scanner; //importing only scanner because it's needed
 //Simple calculator
 
 public class calc
@@ -20,36 +19,36 @@ public class calc
         		"\n4.Division" +
         		"\n5.Power" +
         		"\n#Please enter the number of operation \n");
-        double somethin = in.nextDouble();
-        double addition = 1;
-        double subtraction = 2;
-        double multiplication = 3;
-        double division = 4 ;
-        double power = 5;
-        if (somethin == addition) {
-        	c = a + b;  
-        	System.out.println(a + " + " + b + " = " + c);  }
-        else if (somethin == subtraction)  {
-        	c = a - b;  
-        	System.out.println(a + " - " + b + " = " + c);	}
-        else if (somethin == multiplication)	{
-        	c = a * b;   
-        	System.out.println(a + " * " + b + " = " + c);	}
-        else if (somethin == division)   {
-        	c = a / b;  
-        	System.out.println(a + " / " + b + " = " + c);	}
-        else if (somethin == power)	{
-        	System.out.println("Enhance A or B?" +
-        			"\n1.A" +
-        			"\n2.B");
-        	double enhance = in.nextDouble();
-        	double first = 1;
-        	double second = 2;
-        		if (enhance == first) {
-        			System.out.println(Math.pow(a, 2)); }	
-        		else if (enhance == second); {
-        			System.out.println(Math.pow(b, 2)); }
-        
-        }
+        int operand = in.nextInt(); //using integer for less memory usage
+       switch(operand){ //using switch statement for more compact syntax
+		case 1: //addition
+			c = a + b;  
+        		System.out.println(a + " + " + b + " = " + c); 
+			break;
+		case 2: //subtraction
+	        	c = a - b;  
+        		System.out.println(a + " - " + b + " = " + c);
+			break;
+		case 3: //multiplication
+			c = a * b;   
+			System.out.println(a + " * " + b + " = " + c);
+        		break;
+		case 4: //division
+        		c = a / b;  
+			System.out.println(a + " / " + b + " = " + c);	
+			break;
+		case 5: //power
+			System.out.println("Enhance A or B?" +
+        				"\n1.A" +
+        				"\n2.B");
+       		 	int enhance = in.nextInt(); //using int for less memory usage 
+        			if (enhance == 1) {
+        				System.out.println(a*a); //creating our own pow to not include Math.* 
+				}	
+        			else {
+        				System.out.println(b*b);
+				}
+
+	} 
     }
 }
